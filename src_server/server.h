@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:13:18 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 12:36:19 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 19:30:05 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef SERVER_H
+#ifndef SERVER_H
 # define SERVER_H
 
 # include "signal.h"

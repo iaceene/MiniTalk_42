@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:49 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 10:12:08 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 19:29:54 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef CLIENT_H
+#ifndef CLIENT_H
 # define CLIENT_H
 
 # include "signal.h"

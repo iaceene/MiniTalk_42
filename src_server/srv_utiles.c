@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 18:49:22 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 19:20:00 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_pid(void)
 {
-	ft_putstr("Server PID > ");
+	ft_putstr("\nServer PID : ");
 	ft_putnbr(getpid());
 	ft_putstr("\n");
 }
@@ -28,7 +28,7 @@ void	ft_putstr(char *s)
 void	ft_reset(int *count, char *bit, int flag)
 {
 	if (flag == 1)
-		ft_putstr("\n>> ");
+		ft_putstr("\n->> ");
 	*count = 0;
 	*bit = 0;
 }

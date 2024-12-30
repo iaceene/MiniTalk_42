@@ -6,11 +6,17 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 19:10:46 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 19:28:15 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
+
+void	ft_putstr(char *s)
+{
+	while (*s)
+		write(1, s++, 1);
+}
 
 void	ft_send(int pid, char c)
 {
@@ -49,6 +55,7 @@ int	main(int c, char **v)
 	else if (pid_checker(v[1]))
 		return (ft_err(2));
 	else
-		return (ft_send_msg(ft_atoi(v[1]), v[2]));
+		return (ft_putstr("Sending...\n"),
+			ft_send_msg(ft_atoi(v[1]), v[2]), ft_putstr("Done!\n"), 0);
 	return (0);
 }
