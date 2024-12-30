@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 09:58:05 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:07:41 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int main(int c, char **v)
 	else if (pid_checker(v[1]))
 		return (ft_err(2));
 	else
-		return (ft_send_msg(atoi(v[1]), v[2]));
+		return (ft_send_msg(ft_atoi(v[1]), v[2]));
 	return (0);
 }
