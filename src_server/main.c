@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 17:08:52 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/28 17:40:27 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/29 16:10:48 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,29 @@ void ft_putstr(char *s)
 		write(1, s++, 1);
 }
 
-void ft_handler(int c)
+static void ft_handler(int signal)
 {
-    static int count;
-    static char byte;
+    static char c = 0;  // To store the current character
+    static int bit = 0; // To count the bits
 
-    if (c == SIGUSR1)
-        byte &= ~(1 << (7 - count));  // Set the bit at position 'count' to 0
-    else if (c == SIGUSR2)
-        byte |= (1 << (7 - count));   // Set the bit at position 'count' to 1
+    // Handle signal based on its type
+    if (signal == SIGUSR1) {
+        c |= (1 << (7 - bit));  // Set the corresponding bit to 1
+    }
 
-    count++;
+    // Increment the bit counter
+    bit++;
 
-    // If we've received 8 bits, process the byte
-    if (count == 8)
-    {
-        write(1, &byte, 1);  // Print the character corresponding to the byte
-        count = 0;            // Reset the count for the next byte
-        byte = 0;             // Reset the byte for the next message
+    // Once 8 bits are received (a full byte)
+    if (bit == 8) {
+        // If the character is not null, print it
+        if (c != '\0') {
+            write(1, &c, 1);  // Print the character
+        }
+
+        // Reset bit counter and character
+        bit = 0;
+        c = 0;
     }
 }
 
