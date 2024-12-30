@@ -6,15 +6,15 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 10:07:41 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:11:26 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-void ft_send(int pid, char c)
+void	ft_send(int pid, char c)
 {
-	int 	i;
+	int	i;
 
 	i = 7;
 	while (i >= 0)
@@ -39,10 +39,10 @@ int	ft_send_msg(int pid, char *msg)
 		ft_send(pid, *(msg)++);
 	ft_send(pid, '\0');
 	ft_send(pid, '\n');
-	return (0);	
+	return (0);
 }
 
-int main(int c, char **v)
+int	main(int c, char **v)
 {
 	if (c != 3)
 		return (ft_err(1));

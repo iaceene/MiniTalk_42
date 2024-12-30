@@ -6,19 +6,19 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 09:58:15 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 10:08:15 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:09:55 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-void ft_puterr(char *s)
+void	ft_puterr(char *s)
 {
 	while (*s)
 		write(2, s++, 1);
 }
 
-int ft_isnum(char *s)
+int	ft_isnum(char *s)
 {
 	while (*s)
 	{
@@ -29,14 +29,14 @@ int ft_isnum(char *s)
 	return (1);
 }
 
-int pid_checker(char *s)
+int	pid_checker(char *s)
 {
 	if (!ft_isnum(s) || kill(ft_atoi(s), 0) == -1)
 		return (1);
 	return (kill(ft_atoi(s), 0));
 }
 
-int ft_err(int err)
+int	ft_err(int err)
 {
 	if (err == 1)
 		ft_puterr("Usage : ./client <PID> <text>\n");
