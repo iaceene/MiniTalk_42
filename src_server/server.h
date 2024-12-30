@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:13:18 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 12:34:24 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 12:36:19 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "unistd.h"
 # include "string.h"
 # include "stdlib.h"
-# include "stdio.h" /// delete this !!
 
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);
