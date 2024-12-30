@@ -1,5 +1,5 @@
 SRC_CLIENT = ./src_client/main.c ./src_client/cli_utiles.c
-SRC_SERVER = ./src_server/main.c ./src_server/ft_putnbr.c
+SRC_SERVER = ./src_server/main.c ./src_server/ft_putnbr.c ./src_server/srv_utiles.c
 INCLUD = ./src_client/client.h ./src_server/server.h
 
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
