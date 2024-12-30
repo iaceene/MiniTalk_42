@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:13:18 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 10:15:40 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:46:32 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 # include "unistd.h"
 # include "string.h"
 # include "stdlib.h"
+# include "stdio.h" /// delete this !!
 
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);
 void	ft_print_pid(void);
-void	ft_handler(int signal);
+void    ft_handler(int sig, siginfo_t *info, void *ucontext);
 
 #endif
