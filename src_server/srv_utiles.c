@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 12:35:40 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 18:30:51 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putstr(char *s)
 void	ft_reset(int *count, char *bit, int flag)
 {
 	if (flag == 1)
-		ft_putstr("\n");
+		ft_putstr("\n>> ");
 	*count = 0;
 	*bit = 0;
 }
@@ -48,6 +48,8 @@ void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 	if (sig == SIGUSR1)
 		bit |= (1 << count);
 	count++;
+	usleep(200);
+	kill(info->si_pid, SIGUSR1);
 	if (count == 8)
 	{
 		write(1, &bit, 1);
