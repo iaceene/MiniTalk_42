@@ -6,19 +6,19 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 17:08:52 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 10:39:49 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 12:34:04 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-int main(void)
+int	main(void)
 {
-    struct sigaction sa;
+	struct sigaction	sa;
 
 	ft_print_pid();
-    sa.sa_sigaction = ft_handler;
-    sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = ft_handler;
+	sa.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)

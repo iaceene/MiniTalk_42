@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:13:18 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 10:46:32 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 12:34:24 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);
 void	ft_print_pid(void);
-void    ft_handler(int sig, siginfo_t *info, void *ucontext);
+void	ft_handler(int sig, siginfo_t *info, void *ucontext);
 
 #endif

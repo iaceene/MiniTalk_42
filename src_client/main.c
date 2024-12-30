@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 12:02:10 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 12:31:47 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	ft_send(int pid, char c)
 		}
 		else
 		{
-			if(kill(pid, SIGUSR2) == -1)
+			if (kill(pid, SIGUSR2) == -1)
 				exit(1);
 		}
-		usleep(900);
+		usleep (900);
 		i++;
 	}
 }

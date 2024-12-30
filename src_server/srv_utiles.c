@@ -6,26 +6,26 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 12:24:01 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/30 12:35:40 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-void ft_print_pid(void)
+void	ft_print_pid(void)
 {
 	ft_putstr("Server PID > ");
 	ft_putnbr(getpid());
 	ft_putstr("\n");
 }
 
-void ft_putstr(char *s)
+void	ft_putstr(char *s)
 {
 	while (*s)
 		write(1, s++, 1);
 }
 
-void ft_reset(int *count, char *bit, int flag)
+void	ft_reset(int *count, char *bit, int flag)
 {
 	if (flag == 1)
 		ft_putstr("\n");
@@ -35,11 +35,11 @@ void ft_reset(int *count, char *bit, int flag)
 
 void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 {
-	(void)ucontext;
-	static int count;
-	static char bit;
-	static int pid;
+	static int	count;
+	static char	bit;
+	static int	pid;
 
+	(void)ucontext;
 	if (pid != info->si_pid)
 	{
 		ft_reset(&count, &bit, 1);
