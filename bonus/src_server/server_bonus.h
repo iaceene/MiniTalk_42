@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:13:18 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 21:23:10 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/31 14:55:38 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "signal.h"
 # include "unistd.h"
-# include "string.h"
 # include "stdlib.h"
 
 void	ft_putnbr(int n);

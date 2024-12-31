@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:49 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 19:29:54 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/31 14:55:01 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "signal.h"
 # include "unistd.h"
-# include "string.h"
 # include "stdlib.h"
 
 void	ft_puterr(char *s);
