@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 21:58:59 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/31 19:18:32 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,19 @@ void	ft_reset(int *count, char *bit, int flag)
 
 void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 {
-	static int	count;
-	static char	bit;
-	static int	pid;
+	static int		count;
+	static char		bit;
+	static t_buffer	*buffer;
+	static int		pid;
 
 	(void)ucontext;
 	if (pid != info->si_pid)
 	{
+		if (count < 8 && count > 0)
+			write(2, "[ Message incomplited ! ]", 25);
 		ft_reset(&count, &bit, 1);
 		pid = info->si_pid;
+		ft_lstclear(&buffer);
 	}
 	if (sig == SIGUSR1)
 		bit |= (1 << count);
@@ -51,12 +55,9 @@ void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 	if (count == 8)
 	{
 		if (bit == '\0')
-		{
-			usleep(800);
-			kill(info->si_pid, SIGUSR1);
-		}
+			ft_print_buffer(&buffer, info->si_pid);
 		else
-			write(1, &bit, 1);
+			ft_lstadd_back(&buffer, ft_lstnew(bit));
 		ft_reset(&count, &bit, 0);
 	}
 }
