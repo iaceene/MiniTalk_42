@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:24:50 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/31 19:18:13 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/12/31 19:21:25 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,17 @@ void	ft_lstadd_back(t_buffer **lst, t_buffer *new)
 	t_buffer	*last_node;
 
 	if (!lst || !new)
+	{
+		ft_lstclear(lst);	
 		return ;
+	}
 	if (!*lst)
 		*lst = new;
 	else
 	{
 		last_node = ft_lstlast(*lst);
+		if (!last_node)
+			return ;
 		last_node -> next = new;
 	}
 }
