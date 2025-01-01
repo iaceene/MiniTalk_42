@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:13:18 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/31 19:17:54 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 19:59:36 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ typedef struct s_buffer
 	struct s_buffer	*next;
 }	t_buffer;
 
+void		ft_reset(int *count, char *bit, int flag);
 void		ft_putnbr(int n);
 void		ft_putstr(char *s);
 void		ft_print_pid(void);
+void		ft_print_pid(void);
+void		ft_hand_help(char *bit, int *count, t_buffer **buffer, int pid);
 void		ft_handler(int sig, siginfo_t *info, void *ucontext);
 t_buffer	*ft_lstlast(t_buffer *lst);
 t_buffer	*ft_lstnew(char chara);

@@ -6,23 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/01 04:10:08 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 19:55:45 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client_bonus.h"
-
-void	ft_putstr(char *s)
-{
-	while (*s)
-		write(1, s++, 1);
-}
-
-void	ft_handler(int sig)
-{
-	if (sig == SIGUSR1)
-		ft_putstr("sent successfully...\n");
-}
 
 void	ft_reciver(int sig)
 {

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client_bonus.h                                     :+:      :+:    :+:   */
+/*   server_helper_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 12:53:49 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/01 19:56:30 by yaajagro         ###   ########.fr       */
+/*   Created: 2025/01/01 19:53:08 by yaajagro          #+#    #+#             */
+/*   Updated: 2025/01/01 19:54:55 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLIENT_BONUS_H
-# define CLIENT_BONUS_H
+#include "server_bonus.h"
 
-# include "signal.h"
-# include "unistd.h"
-# include "stdlib.h"
+void	ft_print_pid(void)
+{
+	ft_putstr("\nServer PID : ");
+	ft_putnbr(getpid());
+	ft_putstr("\n");
+}
 
-void	ft_handler(int sig);
-void	ft_puterr(char *s);
-void	ft_putstr(char *s);
-int		ft_isnum(char *s);
-int		pid_checker(char *s);
-int		ft_err(int err);
-int		ft_atoi(char *s);
+void	ft_putstr(char *s)
+{
+	while (*s)
+		write(1, s++, 1);
+}
 
-#endif
+void	ft_hand_help(char *bit, int *count, t_buffer **buffer, int pid)
+{
+	if (*bit == '\0')
+		ft_print_buffer(buffer, pid);
+	else
+		ft_lstadd_back(buffer, ft_lstnew(*bit));
+	ft_reset(count, bit, 0);
+}
