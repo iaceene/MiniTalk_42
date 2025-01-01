@@ -6,11 +6,10 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:24:50 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/31 20:05:01 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:07:29 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
 #include "server_bonus.h"
 
 t_buffer	*ft_lstlast(t_buffer *lst)

@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 19:28:15 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:05:09 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,18 @@ void	ft_putstr(char *s)
 		write(1, s++, 1);
 }
 
+void	ft_reciver(int sig)
+{
+	if (sig == SIGUSR1)
+		return ;
+}
+
 void	ft_send(int pid, char c)
 {
 	int	i;
 
 	i = 0;
+	signal(SIGUSR1, ft_reciver);
 	while (i < 8)
 	{
 		if ((c >> i) & 1)
@@ -35,7 +42,7 @@ void	ft_send(int pid, char c)
 			if (kill(pid, SIGUSR2) == -1)
 				exit(1);
 		}
-		usleep(300);
+		pause();
 		i++;
 	}
 }
