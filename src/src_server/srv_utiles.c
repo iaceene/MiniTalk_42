@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/01 04:11:10 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 21:44:48 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 		write(1, &bit, 1);
 		ft_reset(&count, &bit, 0);
 	}
-	usleep(500);
+	usleep(700);
 	kill(info->si_pid, SIGUSR1);
 }

@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 09:58:15 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/12/30 21:22:43 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 22:06:50 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isnum(char *s)
 {
 	while (*s)
 	{
-		if (!(*s >= '0' && *s <= '9'))
+		if (!((*s >= '0' && *s <= '9') || (*s == '-' || *s == '+')))
 			return (0);
 		s++;
 	}
@@ -31,9 +31,9 @@ int	ft_isnum(char *s)
 
 int	pid_checker(char *s)
 {
-	if (!ft_isnum(s) || kill(ft_atoi(s), 0) == -1)
+	if (!ft_isnum(s) || ft_atoi(s) < 0)
 		return (1);
-	return (kill(ft_atoi(s), 0));
+	return (0);
 }
 
 int	ft_err(int err)
@@ -42,6 +42,8 @@ int	ft_err(int err)
 		ft_puterr("Usage : ./client <PID> <text>\n");
 	else if (err == 2)
 		ft_puterr("Invalid PID :)\n");
+	else if (err == 3)
+		ft_puterr("Fail to send > - <\n");
 	return (1);
 }
 

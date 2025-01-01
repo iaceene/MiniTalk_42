@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/01 19:53:58 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 21:45:11 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 	count++;
 	if (count == 8)
 		ft_hand_help(&bit, &count, &buffer, info->si_pid);
-	usleep(500);
+	usleep(700);
 	kill(info->si_pid, SIGUSR2);
 }

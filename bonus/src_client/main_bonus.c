@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:53:05 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/01 19:55:45 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/01 22:04:38 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	ft_send(int pid, char c)
 		if ((c >> i) & 1)
 		{
 			if (kill(pid, SIGUSR1) == -1)
-				exit(1);
+				exit(ft_err(3));
 		}
 		else
 		{
 			if (kill(pid, SIGUSR2) == -1)
-				exit(1);
+				exit(ft_err(3));
 		}
 		pause();
 		i++;
