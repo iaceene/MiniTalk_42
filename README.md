@@ -90,7 +90,7 @@ minitalk/
 ### Running the Server:
 ```bash
 $ ./server
-Server started, waiting for messages...
+PID : 1234
 ```
 
 ### Running the Client:
@@ -100,7 +100,7 @@ $ ./client <server_pid> "Hello World"
 
 The server will output:
 ```
-Message received: Hello World
+>> Hello World
 ```
 
 ## Signal Handling
