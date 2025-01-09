@@ -1,6 +1,6 @@
-# Minitalk 42
+# Minitalk
 
-**Minitalk 42** is a simple project that demonstrates inter-process communication using Unix signals. It involves creating a **server** and a **client**, where the client sends messages to the server using signals, and the server decodes and handles those messages.
+a simple project that demonstrates inter-process communication using Unix signals. It involves creating a **server** and a **client**, where the client sends messages to the server using signals, and the server decodes and handles those messages.
 
 ## Features
 - **Server-Client Communication** using signals
