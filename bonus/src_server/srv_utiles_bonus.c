@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 10:14:00 by yaajagro          #+#    #+#             */
-/*   Updated: 2025/01/01 21:45:11 by yaajagro         ###   ########.fr       */
+/*   Updated: 2025/01/28 21:27:31 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	ft_handler(int sig, siginfo_t *info, void *ucontext)
 	static int		pid;
 
 	(void)ucontext;
+	if (sig == -1)
+		return (ft_lstclear(&buffer));
 	if (pid != info->si_pid)
 	{
 		if (count < 8 && count > 0)
